@@ -59,12 +59,13 @@
 # 시간초과 실화냐
 # 라이브러리 써야지
 from collections import deque
+import sys
 q =deque()
 
-n = int(input())
+n = int(sys.stdin.readline())
 
 for i in range(n):
-    o = input()
+    o = sys.stdin.readline()
     o = o.split()
     try:
         x = o[1]
@@ -92,6 +93,6 @@ for i in range(n):
         if len(q) == 0:
             print(1)
         else:
-            print(-1)
+            print(0)
     elif o == 'size':
         print(len(q))
