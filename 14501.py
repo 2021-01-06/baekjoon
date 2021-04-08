@@ -1,10 +1,19 @@
-# 퇴사라니
+
 # 입력
 N = int(input())
-s = [list(map(int, input().split())) for i in range(N)]
-dp = []
+t = []
+p = []
+dp = [0] * (N+1)
 
-# 그리디 한 방법은 아니고,,, 브루투스 되겠네
-# 다이나믹으로 ㄱㄱ
-# dp에는 N일 까지의 최대수입
+for i in range(N):
+    a, b = map(int, input().split())
+    t.append(a)
+    p.append(b)
 
+for i in range(N-1, -1, -1):
+    if i + t[i] > N:
+        dp[i] = dp[i+1]
+    else:
+        dp[i] = max(dp[i+1], p[i] + dp[i+t[i]])
+
+print(dp[0])
