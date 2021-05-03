@@ -1,3 +1,3 @@
 K, N, M = map(int, input().split())
-
-print(K*N-M)
+money = K*N-M
+print(money if money >= 0 else 0)
